@@ -1,0 +1,37 @@
+<div class="container2">
+
+  <div class="headmain">
+    <div class="head">The Standard for Influencer Marketing</div>
+    <div class="head_sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa suscipit quae, nihil illo minus
+      quia nesciunt architecto totam a voluptate! Modi rem debitis similique tenetur. Culpa odio tempora tempore fugiat.
+    </div>
+    <h2 [class]="className" [style.color]="white">{{hello}} {{ count }} {{exp}}</h2>
+
+    <label [class]="LabName" *ngIf="show" @myanim>Name </label>
+    <input type="text" class="inp" (input)="printName($event)">
+    <div class="alignimg">
+      <div *ngFor="let sample of sample">
+        <img src="assets\MicrosoftTeams-image (6).png" alt="" class="sampleimg">
+        <div class="nameHead">Name: <span class="nameVal">{{sample.name}}</span></div>
+        <div class="nameHead">Age: <span class="nameVal">{{sample.age}}</span></div>
+      </div>
+    </div>
+
+    <div class="but"><button (click)="anim()">Animation</button></div>
+    <div class="but"><button (click)="popupopen()">Discover Tracker</button></div> 
+  </div>
+</div>
+
+<!-- popup -->
+<div id="modalpop" class="modal" #popup>
+  <div class="modal-title row popHead">
+    <div class="col s11">modal</div>
+    <div class="col s1"><i class="material-icons red white-text closeRound right" (click)="popupclose()">close</i></div>
+  </div>
+  <div class="modal-content center boldText">
+    <div>Submited <i class="material-icons green-text tiny">done</i></div>
+    <div>Thank you!</div>
+  </div>
+  <div class="modal-footer">
+  </div>
+</div>

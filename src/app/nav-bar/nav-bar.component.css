@@ -1,0 +1,33 @@
+
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    background-color: #251762;
+    padding:15px;
+    position: fixed;
+    align-items: center;
+    box-shadow: none;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.hov{
+padding: 10px 10px;
+}
+
+.hov:hover{
+    background-color: orangered;
+    border-radius: 10px;
+    cursor: pointer;
+}
