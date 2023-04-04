@@ -57,9 +57,20 @@ label {
     cursor: default;
 }
 
+.DoneImg {
+    position: absolute;
+    top: 40%;
+    left: 44%;
+}
+
+.loginmsg {
+    font-size: 17px;
+    font-weight: 600;
+}
+
 @media only screen and (max-width: 600px) {
-  .loginWrap{
-    width: 90% !important;
-    height: 90% !important;
-  }
+    .loginWrap {
+        width: 90% !important;
+        height: 90% !important;
+    }
 }

@@ -1,6 +1,6 @@
 <div class="container">
     <div class="loginWrap">
-        <div [formGroup]="form">
+        <div [formGroup]="form" *ngIf="loginPage">
             <label for="username">User name</label>
             <input class="re_input" type="text" id="username" formControlName="username" autocomplete="off">
             <div class="error" *ngIf="form.get('username').invalid && form.get('username').untouched">
@@ -24,9 +24,13 @@
                 Password is invalid
             </div>
             <div class="center">
-                <button id="movableBtn" class="waves-effect waves-light btn SubmitBtn"
-                (mouseenter)="moveable()">SUBMIT</button>
+                <button id="movableBtn" class="waves-effect waves-light btn SubmitBtn" (click)="submitBtn()"
+                    (mouseenter)="moveable()">SUBMIT</button>
             </div>
+        </div>
+        <div class="DoneImg center" *ngIf="doneImg" @visible>
+            <img src="assets/Done.svg" alt="">
+            <p class="loginmsg">Login successfull</p>
         </div>
     </div>
 </div>

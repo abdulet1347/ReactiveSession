@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger,state,style,transition,animate } from '@angular/animations';
+import { animate, style, transition, trigger,keyframes, state } from '@angular/animations';
 import {
   FormGroup,
   FormControl,
@@ -14,28 +14,17 @@ import {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   animations:[
-    trigger('myanim',[
-        state('Enter',style({
-          height:'10px'
-        })),
-      transition('void => Enter',[
-        style({
-         height:'0px'
-        }),
-        animate(
-          '2.5s',
-          style({
-            height:'200px'
-          }),
-        )
-      ]),
-      transition('Enter => void',[
-        animate(
-          '2.1s',
-          style({
-            height:'100px'
-          }),
-        )
+    trigger('visible',[
+      transition(':enter',[         // void => *
+       style({transform:'translateY(100%)',opacity:'0'}),
+        animate('3s ease',keyframes([
+          style({opacity:"0"}),
+          style({opacity:"0"}),
+          style({opacity:"0.2",transform:'translateY(0%)'}),
+          style({opacity:"0.4"}),
+          style({opacity:"0.8"}),
+         style({opacity:"1"}),
+        ]))
       ])
     ])    
   ]
@@ -50,6 +39,10 @@ export class AppComponent implements OnInit {
   iaCount() {
     this.reNum = this.re.length;
   }
+
+  loginPage:boolean=true;
+  doneImg:boolean=false;
+
   form = new FormGroup({
     username: new FormControl(
       '',
@@ -74,7 +67,10 @@ export class AppComponent implements OnInit {
       return null;
     }
   }
-
+  submitBtn(){
+    this.loginPage=false;
+    this.doneImg=true;
+  }
   moveable() {
     const move = document.getElementById('movableBtn');
     if (this.form.invalid) {
