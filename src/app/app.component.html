@@ -1,6 +1,8 @@
 <div class="container">
     <div class="loginWrap">
+        <!-- Form group start -->
         <div [formGroup]="form" *ngIf="loginPage">
+            <!-- User name field start -->
             <label for="username">User name</label>
             <input class="re_input" type="text" id="username" formControlName="username" autocomplete="off">
             <div class="error" *ngIf="form.get('username').invalid && form.get('username').untouched">
@@ -11,8 +13,10 @@
                 <img class="errorImg" src="assets\se_insuffErrorImg.png" alt="">
                 User Name is invalid
             </div>
+            <!-- User name field end -->
             <br>
             <br>
+            <!-- Password field start -->
             <label for="password">Password</label>
             <input id="password" class="re_input" formControlName="password" type="password" autocomplete="off">
             <div class="error" *ngIf="form.get('password').invalid && form.get('password').untouched ">
@@ -23,12 +27,15 @@
                 <img class="errorImg" src="assets\se_insuffErrorImg.png" alt="">
                 Password is invalid
             </div>
+            <!-- password field end -->
             <div class="center">
                 <button id="movableBtn" class="waves-effect waves-light btn SubmitBtn" (click)="submitBtn()"
                     (mouseenter)="moveable()">SUBMIT</button>
             </div>
         </div>
+        <!-- Form group end -->
         <div class="DoneImg center" *ngIf="doneImg" @visible>
+            
             <img src="assets/Done.svg" alt="">
             <p class="loginmsg">Login successfull</p>
         </div>
